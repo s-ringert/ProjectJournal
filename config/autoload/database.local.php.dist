@@ -4,7 +4,7 @@
          'driver' => 'pdo_mysql',
          'user' => 'root',
          'password' => 'root',
-         'dbname' => 'skeleton',
+         'dbname' => 'journal',
          'port' => '3306',
          'host' => 'docker-mysql',
      ]

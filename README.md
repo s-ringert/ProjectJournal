@@ -17,25 +17,25 @@ cp .env.dist .env
 cp config/autoload/database.local.php.dist config/autoload/database.local.php
 cp config/autoload/development.local.php.dist config/autoload/development.local.php      
 ```
-* set new db Password
+* set new db Password in `.env` and `config/autoload/database.local.php`
 * composer install
 ```shell
 sudo docker-compose run docker-php-fpm composer install
 ```
                             
-* set rw on cache dir                        
+* set rwx on cache dir                        
 ```shell
 chmod -R 777 data/cache
+```
+
+* start application
+```shell
+sudo docker-compose up -d   
 ```
 
 * init db
 ```shell
 sudo docker-compose run docker-php-fpm php vendor/bin/doctrine orm:schema-tool:create
-```
-
-* start application
-```shell
-sudo docker-compose up
 ```
 
 # Helpful commands
