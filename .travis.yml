@@ -1,0 +1,22 @@
+language: php
+php:
+  - 7.2
+
+before_install:
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+install:
+  - composer install
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+jobs:
+  include:
+    - stage: integration
+      script:
+        - composer cs-check
+        - composer stan
+        - composer test

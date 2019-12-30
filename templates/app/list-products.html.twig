@@ -1,0 +1,19 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}DB Demo{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        {% for product in productList %}
+        <div class="col-md-4">
+            <h2>
+                {{ product.id }}
+            </h2>
+            <p>
+                {{ product.name }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
